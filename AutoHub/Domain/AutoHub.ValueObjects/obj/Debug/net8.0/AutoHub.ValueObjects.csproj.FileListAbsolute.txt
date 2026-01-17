@@ -1,0 +1,12 @@
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\bin\Debug\net8.0\AutoHub.ValueObjects.deps.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\bin\Debug\net8.0\AutoHub.ValueObjects.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\bin\Debug\net8.0\AutoHub.ValueObjects.pdb
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.AssemblyInfoInputs.cache
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.AssemblyInfo.cs
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.csproj.CoreCompileInputs.cache
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.sourcelink.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\refint\AutoHub.ValueObjects.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.pdb
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\ref\AutoHub.ValueObjects.dll

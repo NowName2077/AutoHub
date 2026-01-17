@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AutoHub.Domain.Test/1.0.0": {
+        "dependencies": {
+          "AutoHub.Domain": "1.0.0",
+          "AutoHub.ValueObjects": "1.0.0"
+        },
+        "runtime": {
+          "AutoHub.Domain.Test.dll": {}
+        }
+      },
+      "AutoHub.Domain/1.0.0": {
+        "dependencies": {
+          "AutoHub.ValueObjects": "1.0.0"
+        },
+        "runtime": {
+          "AutoHub.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AutoHub.ValueObjects/1.0.0": {
+        "runtime": {
+          "AutoHub.ValueObjects.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AutoHub.Domain.Test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AutoHub.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AutoHub.ValueObjects/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

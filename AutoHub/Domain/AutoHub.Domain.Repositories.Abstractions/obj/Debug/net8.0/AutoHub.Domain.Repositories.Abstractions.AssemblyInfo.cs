@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoHub.Domain.Repositories.Abstractions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1e4fd6e0b3379cf587cfea6d3319f0639b8c5df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94187714b960c5b9509ac78808344f9849e952ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoHub.Domain.Repositories.Abstractions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoHub.Domain.Repositories.Abstractions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

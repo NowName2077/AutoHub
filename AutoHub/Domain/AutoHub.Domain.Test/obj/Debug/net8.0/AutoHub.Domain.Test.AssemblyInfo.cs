@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("AutoHub.ValueObjects")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("AutoHub.Domain.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94187714b960c5b9509ac78808344f9849e952ca")]
-[assembly: System.Reflection.AssemblyProductAttribute("AutoHub.ValueObjects")]
-[assembly: System.Reflection.AssemblyTitleAttribute("AutoHub.ValueObjects")]
+[assembly: System.Reflection.AssemblyProductAttribute("AutoHub.Domain.Test")]
+[assembly: System.Reflection.AssemblyTitleAttribute("AutoHub.Domain.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

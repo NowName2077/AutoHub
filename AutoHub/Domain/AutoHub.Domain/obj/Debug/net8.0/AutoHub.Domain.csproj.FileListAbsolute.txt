@@ -1,0 +1,16 @@
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\bin\Debug\net8.0\AutoHub.Domain.deps.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\bin\Debug\net8.0\AutoHub.Domain.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\bin\Debug\net8.0\AutoHub.Domain.pdb
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\bin\Debug\net8.0\AutoHub.ValueObjects.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\bin\Debug\net8.0\AutoHub.ValueObjects.pdb
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.csproj.AssemblyReference.cache
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.AssemblyInfoInputs.cache
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.AssemblyInfo.cs
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.csproj.CoreCompileInputs.cache
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.sourcelink.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub..EEB1FFE3.Up2Date
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\refint\AutoHub.Domain.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.pdb
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\ref\AutoHub.Domain.dll

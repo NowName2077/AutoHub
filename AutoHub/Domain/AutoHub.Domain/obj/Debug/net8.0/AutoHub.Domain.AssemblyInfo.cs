@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoHub.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19c87001bb3a5288a08c2bc19363c5a18318549f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94187714b960c5b9509ac78808344f9849e952ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoHub.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoHub.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
