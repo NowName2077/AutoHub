@@ -7,9 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Favorite\" />
-      <Folder Include="Listing\" />
-      <Folder Include="Transaction\" />
+      <ProjectReference Include="..\..\Domain\AutoHub.Domain\AutoHub.Domain.csproj" />
+      <ProjectReference Include="..\..\Domain\AutoHub.ValueObjects\AutoHub.ValueObjects.csproj" />
     </ItemGroup>
 
 </Project>

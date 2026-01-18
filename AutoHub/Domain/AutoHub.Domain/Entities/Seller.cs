@@ -7,7 +7,6 @@ namespace AutoHub.Domain.Entities;
 
 public class Seller(Guid id, Username username) : Entity<Guid>(id)
 {
-    private readonly ICollection<Car> _cars = [];
     private readonly ICollection<Listing> _listings = [];
     
     public Username Username { get; private set; } = username?? throw new ArgumentNullValueException(nameof(username));
@@ -19,17 +18,32 @@ public class Seller(Guid id, Username username) : Entity<Guid>(id)
         return true;
     }
     
-    public Car CreateCar(Brand brand, EngineVolume engineVolume, Horsepower horsepower, Torque torque, 
-        FuelType fuelType, Aspiration aspiration, EngineConfiguration engineConfiguration, EngineLayout engineLayout,
-        TypeOfDrive typeOfDrive, TransmissionType transmissionType, BodyType bodyType, Color color)
+    public Listing CreateListing(Title title, 
+        Brand brand, 
+        EngineVolume engineVolume, 
+        Horsepower horsepower, 
+        Torque torque, 
+        FuelType fuelType, 
+        Aspiration aspiration, 
+        EngineConfiguration engineConfiguration, 
+        EngineLayout engineLayout,
+        TypeOfDrive typeOfDrive, 
+        TransmissionType transmissionType, 
+        BodyType bodyType, 
+        Color color, 
+        Money price, 
+        DateTime startDate)
     {
-        var car = new Car(brand, engineVolume, horsepower, torque, fuelType, aspiration, engineConfiguration,
-            engineLayout, typeOfDrive, transmissionType, bodyType, color);
-        _cars.Add(car);
-        return car;
+        var listing = new Listing(title, brand, engineVolume, horsepower, torque, fuelType, aspiration, engineConfiguration,
+            engineLayout, typeOfDrive, transmissionType, bodyType, color, price, startDate, this);
+        _listings.Add(listing);
+        return listing;
     }
-    public Car UpdateCar(
-        Car car,
+
+    public Listing UpdateListing(
+        Listing listing,
+        Title? newTitle = null,
+        Money? newPrice = null,
         Brand? newBrand = null,
         EngineVolume? newEngineVolume = null,
         Horsepower? newHorsepower = null,
@@ -43,50 +57,15 @@ public class Seller(Guid id, Username username) : Entity<Guid>(id)
         BodyType? newBodyType = null,
         Color? newColor = null)
     {
-        if (car == null) throw new ArgumentNullValueException(nameof(car));
-
-        var owned = _cars.FirstOrDefault(c => c == car)
-                    ?? throw new InvalidOperationException("Car does not belong to this seller.");
-        
-        owned.Update(newBrand, newEngineVolume, newHorsepower, newTorque,
-            newFuelType, newAspiration, newEngineConfiguration, newEngineLayout,
-            newTypeOfDrive, newTransmissionType, newBodyType, newColor);
-
-        return owned;
-    }
-
-    public bool DeleteCar(Car car)
-    {
-        if (car == null) throw new ArgumentNullValueException(nameof(car));
-
-        var owned = _cars.FirstOrDefault(c => c.Id == car.Id)
-                    ?? throw new InvalidOperationException("Car does not belong to this seller.");
-
-        if (_listings != null && _listings.Any(l => l.Car.Id == owned.Id && l.IsActive))
-            throw new InvalidOperationException("Cannot delete car that has active listings.");
-
-        return _cars.Remove(owned);
-    }
-    
-    public Listing CreateListing(Title title, Car car, Money price, DateTime startDate)
-    {
-        if (car == null) throw new ArgumentNullValueException(nameof(car));
-        if (!_cars.Contains(car))
-            _cars.Add(car);
-
-        var listing = new Listing(title, car, price, startDate, this);
-        _listings.Add(listing);
-        return listing;
-    }
-
-    public Listing UpdateListing(Listing listing,Title? newTitel = null, Money? newPrice = null, Car? newCar = null)
-    {
         if (listing == null) throw new ArgumentNullValueException(nameof(listing));
         var owned = _listings.FirstOrDefault(l => l == listing)
                     ?? throw new InvalidOperationException("Listing does not belong to this seller.");
 
+        if (newTitle != null) owned.UpdateTitle(newTitle);
         if (newPrice != null) owned.UpdatePrice(newPrice);
-        if (newCar != null) owned.UpdateCar(newCar);
+        owned.UpdateCar(newBrand, newEngineVolume, newHorsepower, newTorque, newFuelType, newAspiration,
+            newEngineConfiguration, newEngineLayout, newTypeOfDrive, newTransmissionType, newBodyType, newColor);
+
         return owned;
     }
 
