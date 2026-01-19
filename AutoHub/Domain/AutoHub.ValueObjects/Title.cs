@@ -3,4 +3,4 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class Title(string titel) : ValueObject<string>(new TitleValidator(), titel);
+public class Title(string titele) : ValueObject<string>(new TitleValidator(), titele);

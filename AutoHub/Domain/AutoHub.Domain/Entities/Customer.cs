@@ -7,10 +7,10 @@ namespace AutoHub.Domain.Entities;
 
 public class Customer(Guid id, Username username) : Entity<Guid>(id)
 {
-    private readonly ICollection<Favorite> _favorites = [];
-    private readonly ICollection<Listing> _observedListings = [];
+    private readonly ICollection<Favorite> _favorites = new List<Favorite>();
+    private readonly ICollection<Listing> _observedListings = new List<Listing>();
     
-    public Username Username { get; private set; } = username?? throw new ArgumentNullValueException(nameof(username));
+    public Username Username { get; private set; } = username ?? throw new ArgumentNullValueException(nameof(username));
     
     public IReadOnlyCollection<Listing> ActiveObservedListings =>
         _observedListings.Where(lot => lot.IsActive).ToList().AsReadOnly();

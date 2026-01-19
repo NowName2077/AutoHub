@@ -7,9 +7,9 @@ namespace AutoHub.Domain.Entities;
 
 public class Seller(Guid id, Username username) : Entity<Guid>(id)
 {
-    private readonly ICollection<Listing> _listings = [];
+    private readonly ICollection<Listing> _listings = new List<Listing>();
     
-    public Username Username { get; private set; } = username?? throw new ArgumentNullValueException(nameof(username));
+    public Username Username { get; private set; } = username ?? throw new ArgumentNullValueException(nameof(username));
     
     internal bool ChangeUsername(Username newUsername) 
     {
