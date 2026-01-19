@@ -10,7 +10,7 @@ using AutoMapper;
 namespace AutoHub.Application.Services.Mapping;
 
 public class ApplicationProfile:Profile
-{
+{ 
     public ApplicationProfile()
     {
         CreateMap<Money, decimal>().ConvertUsing(src => src.Value);
