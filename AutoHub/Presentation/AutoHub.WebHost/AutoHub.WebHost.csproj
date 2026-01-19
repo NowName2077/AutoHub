@@ -23,8 +23,4 @@
       <ProjectReference Include="..\..\Infrastructure\AutoHub.Infrastructure.EntityFramework\AutoHub.Infrastructure.EntityFramework.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Responses\Transaction\" />
-    </ItemGroup>
-
 </Project>

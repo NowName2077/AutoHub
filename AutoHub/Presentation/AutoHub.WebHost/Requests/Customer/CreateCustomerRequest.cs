@@ -1,6 +1,3 @@
 ﻿namespace AutoHub.WebHost.Requests.Customer;
 
-public class CreateCustomerRequest
-{
-    
-}
+public record class CreateCustomerRequest(Guid Id, string Username);

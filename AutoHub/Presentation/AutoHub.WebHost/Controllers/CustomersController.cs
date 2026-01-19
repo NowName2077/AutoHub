@@ -1,7 +1,7 @@
 using AutoHub.Application.Models.Customer;
 using AutoHub.Application.Services.Abstractions;
-using AutoHub.WebHost.Requests;
-using AutoHub.WebHost.Responses;
+using AutoHub.WebHost.Requests.Customer;
+using AutoHub.WebHost.Responses.Customer;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 

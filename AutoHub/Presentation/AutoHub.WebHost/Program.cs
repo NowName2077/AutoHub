@@ -8,6 +8,7 @@ using AutoHub.Application.Services;
 using AutoHub.Application.Services.Abstractions;
 using AutoHub.Domain.Repositories.Abstractions;
 using AutoHub.Infrastructure.EntityFramework.RepositoriesEF;
+using AutoHub.WebHost.Mapping;
 using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,7 +22,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString, npgsql =>
         npgsql.MigrationsAssembly("AutoHub.Infrastructure.EntityFramework")));
 
-// CORS
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoHub API", Version = "v1" });
+});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -30,29 +35,20 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader());
 });
 
-// Controllers + FluentValidation
-builder.Services.AddControllers()
-    .AddFluentValidation();
 
-// Swagger
+builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoHub API", Version = "v1" });
-});
 
+builder.Services.AddSwaggerGen();
 // AutoMapper
 builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationProfile).Assembly);
-//builder.Services.AddAutoMapper(typeof(ApplicationProfile).Assembly, typeof(PresentationProfile).Assembly);
 
-
-// Repositories
 builder.Services.AddScoped<ICustomersRepository, CustomerRepository>();
 builder.Services.AddScoped<ISellersRepository, SellerRepository>();
 builder.Services.AddScoped<IListingsRepository, ListingsRepository>();
 builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
 
-// Application services
 builder.Services.AddScoped<ICustomersApplicationService, CustomersApplicationService>();
 builder.Services.AddScoped<ISellersApplicationService, SellersApplicationService>();
 builder.Services.AddScoped<IListingsApplicationService, ListingsApplicationService>();
@@ -61,16 +57,19 @@ builder.Services.AddScoped<ITransactionsApplicationService, TransactionApplicati
 
 var app = builder.Build();
 
-// Apply migrations (optional)
 app.MigrateDatabase<ApplicationDbContext>();
 
-// Middleware
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AutoHub API v1"));
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-app.UseHttpsRedirection();
-app.UseCors("AllowAll");
 app.UseAuthorization();
+
+
 app.MapControllers();
+
+app.MigrateDatabase<ApplicationDbContext>();
 
 app.Run();

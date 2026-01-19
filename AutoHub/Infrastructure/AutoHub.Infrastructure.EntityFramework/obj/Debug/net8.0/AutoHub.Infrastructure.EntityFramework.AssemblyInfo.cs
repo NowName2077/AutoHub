@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoHub.Infrastructure.EntityFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+117a33082d1c61b2b1af1adea17fe4165d388325")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c6754a84d652578dbb12eb555c1f8f3b35098d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoHub.Infrastructure.EntityFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoHub.Infrastructure.EntityFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
