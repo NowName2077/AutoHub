@@ -5,15 +5,21 @@ using AutoHub.ValueObjects;
 
 namespace AutoHub.Domain.Entities;
 
-public class Seller(Guid id, Username username) : Entity<Guid>(id)
+public class Seller: Entity<Guid>
 {
     private readonly ICollection<Listing> _listings = new List<Listing>();
     
-    public Username Username { get; private set; } = username ?? throw new ArgumentNullValueException(nameof(username));
+    public Username Username { get; private set; } 
     
     public IReadOnlyCollection<Listing> ActiveListings => 
         _listings.Where(l => l.IsActive).ToList().AsReadOnly();
     
+    protected Seller() { }
+    
+    public Seller(Guid id, Username username) : base(id)
+    {
+        Username = username ?? throw new ArgumentNullValueException(nameof(username));
+    }
     internal bool ChangeUsername(Username newUsername) 
     {
         if (Username == newUsername) return false;
@@ -21,24 +27,24 @@ public class Seller(Guid id, Username username) : Entity<Guid>(id)
         return true;
     }
     
-    public Listing CreateListing(Title title, 
-        Brand brand, 
-        EngineVolume engineVolume, 
-        Horsepower horsepower, 
-        Torque torque, 
-        FuelType fuelType, 
-        Aspiration aspiration, 
-        EngineConfiguration engineConfiguration, 
+    public Listing CreateListing(Title title,
+        Brand brand,
+        EngineVolume engineVolume,
+        Horsepower horsepower,
+        Torque torque,
+        FuelType fuelType,
+        Aspiration aspiration,
+        EngineConfiguration engineConfiguration,
         EngineLayout engineLayout,
-        TypeOfDrive typeOfDrive, 
-        TransmissionType transmissionType, 
-        BodyType bodyType, 
-        Color color, 
-        Money price, 
+        TypeOfDrive typeOfDrive,
+        TransmissionType transmissionType,
+        BodyType bodyType,
+        Color color,
+        Money price,
         DateTime startDate)
     {
-        var listing = new Listing(title, brand, engineVolume, horsepower, torque, fuelType, aspiration, engineConfiguration,
-            engineLayout, typeOfDrive, transmissionType, bodyType, color, price, startDate, this);
+        var listing = new Listing(title, brand, engineVolume, horsepower, torque, fuelType, aspiration, 
+            engineConfiguration, engineLayout, typeOfDrive, transmissionType, bodyType, color, price, startDate, this);
         _listings.Add(listing);
         return listing;
     }

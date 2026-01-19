@@ -5,18 +5,24 @@ using AutoHub.ValueObjects.Exceptions;
 
 namespace AutoHub.Domain.Entities;
 
-public class Customer(Guid id, Username username) : Entity<Guid>(id)
+public class Customer: Entity<Guid>
 {
     private readonly ICollection<Favorite> _favorites = new List<Favorite>();
     private readonly ICollection<Listing> _observedListings = new List<Listing>();
     
-    public Username Username { get; private set; } = username ?? throw new ArgumentNullValueException(nameof(username));
+    public Username Username { get; private set; }
     
     public IReadOnlyCollection<Listing> ActiveObservedListings =>
         _observedListings.Where(lot => lot.IsActive).ToList().AsReadOnly();
     
     public IReadOnlyCollection<Favorite> Favorites => _favorites.ToList().AsReadOnly();
     
+    protected Customer() { }
+    
+    public Customer(Guid id, Username username) : base(id)
+    {
+        Username = username ?? throw new ArgumentNullValueException(nameof(username));
+    }
     internal bool ChangeUsername(Username newUsername)
     {
         if (Username == newUsername) return false;
@@ -50,7 +56,7 @@ public class Customer(Guid id, Username username) : Entity<Guid>(id)
             throw new NotForeseenSituationForThisListingSellerException();
         
         if (money < listing.Price)
-            throw new NotForeseenSituationForThisListingPriceException(money, listing.Price);
+            throw new NotForeseenSituationForThisListingPriceException(listing.Price, money);
         
         listing.Complete(this);
 

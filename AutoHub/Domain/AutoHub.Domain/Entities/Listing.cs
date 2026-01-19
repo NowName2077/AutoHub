@@ -50,7 +50,7 @@ public class Listing: Entity<Guid>
     
     public bool IsCompleted => Status == LotStatus.Completed;
     
-    protected  Listing() {}
+    protected  Listing() { }
 
     protected Listing(Guid id,
         Title title, 
@@ -66,12 +66,12 @@ public class Listing: Entity<Guid>
         TransmissionType transmissionType,
         BodyType bodyType,
         Color color,
-        Money price, 
-        DateTime startDate, 
-        LotStatus status, 
+        Money price,
+        DateTime startDate,
+        LotStatus status,
         Seller seller): base(id)
     {
-        Title = title?? throw new ArgumentNullException(nameof(title));
+        Title = title?? throw new ArgumentNullValueException(nameof(title));
         Brand = brand ?? throw new ArgumentNullValueException(nameof(brand));
         EngineVolume = engineVolume;
         Horsepower = horsepower;
@@ -83,14 +83,14 @@ public class Listing: Entity<Guid>
         TypeOfDrive = typeOfDrive;
         TransmissionType = transmissionType;
         BodyType = bodyType;
-        Color = color?? throw new ArgumentNullException(nameof(color));
-        Price = price ?? throw new ArgumentNullException(nameof(price));
+        Color = color?? throw new ArgumentNullValueException(nameof(color));
+        Price = price ?? throw new ArgumentNullValueException(nameof(price));
         StartDate = startDate;
         Status = status;
-        Seller = seller ?? throw new ArgumentNullException(nameof(seller));
+        Seller = seller ?? throw new ArgumentNullValueException(nameof(seller));
     }
     
-    public Listing(Title title,         
+    public Listing(Title title,
         Brand brand,
         EngineVolume engineVolume,
         Horsepower horsepower,
@@ -103,12 +103,12 @@ public class Listing: Entity<Guid>
         TransmissionType transmissionType,
         BodyType bodyType,
         Color color,
-        Money price, 
-        DateTime startDate, 
-        Seller seller) 
+        Money price,
+        DateTime startDate,
+        Seller seller)
         : this(Guid.NewGuid(), title, brand, engineVolume, horsepower, torque, fuelType, aspiration, 
-            engineConfiguration,engineLayout, typeOfDrive, transmissionType, bodyType,
-            color, price, startDate, LotStatus.Active, seller){}
+            engineConfiguration, engineLayout, typeOfDrive, transmissionType, bodyType, color, 
+            price, startDate, LotStatus.Active, seller){ }
     
     public bool SetCancel(Seller seller)
     {
@@ -128,19 +128,19 @@ public class Listing: Entity<Guid>
         if (!IsActive)
             throw new CancelNotActiveListingException(this);
 
-        Buyer = buyer ?? throw new ArgumentNullException(nameof(buyer));
+        Buyer = buyer ?? throw new ArgumentNullValueException(nameof(buyer));
         Status = LotStatus.Completed;
         return true;
     }
     
     public void UpdateTitle(Title newTitle)
     {
-        Title = newTitle;
+        Title = newTitle ?? throw new ArgumentNullValueException(nameof(newTitle));
     }
     
     public void UpdatePrice(Money newPrice)
     {
-        Price = newPrice;
+        Price = newPrice ?? throw new ArgumentNullValueException(nameof(newPrice));
     }
 
     public void UpdateCar(

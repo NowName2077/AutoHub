@@ -1,7 +1,8 @@
 ﻿namespace AutoHub.Domain.Base;
 
-public abstract class Entity<TId>(TId id) where TId : struct, IEquatable<TId>
+public abstract class Entity<TId> where TId : struct, IEquatable<TId>
 {
-    public TId Id { get; } = id;
+    public TId Id { get; }
+    protected Entity(TId id) { Id = id; }
     protected Entity() : this(default!) { }
 }

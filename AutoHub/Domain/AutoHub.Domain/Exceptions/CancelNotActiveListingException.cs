@@ -2,8 +2,12 @@
 
 namespace AutoHub.Domain.Exceptions;
 
-public class CancelNotActiveListingException(Listing listing)
-    : InvalidOperationException($"Can't cancel an inactive listing {listing.Title} (id = {listing.Id}).")
+public class CancelNotActiveListingException: InvalidOperationException
 {
-    public Listing Listing => listing;
+    public CancelNotActiveListingException(Listing listing)
+        : base($"Can't cancel an inactive listing {listing.Title} (id = {listing.Id}).")
+    {
+        Listing = listing;
+    }
+    public Listing Listing { get; }
 }

@@ -3,9 +3,15 @@ using AutoHub.Domain.Enums;
 
 namespace AutoHub.Domain.Exceptions;
 
-public class NotForeseenSituationForThisListingStatusException(Listing lot, LotStatus status)
-        : InvalidOperationException($"Not foreseen situation of transaction for this listing status {status} (id = {lot.Id})")
+public class NotForeseenSituationForThisListingStatusException: InvalidOperationException
+{
+    public NotForeseenSituationForThisListingStatusException(Listing listing, LotStatus status)
+        : base($"Not foreseen situation of transaction for this listing status {status} (id = {listing.Id})")
     {
-        public Listing Listing => lot;
-        public LotStatus Status => status;
+        Listing = listing;
+        Status = status;
     }
+
+    public Listing Listing { get; }
+    public LotStatus Status { get; }
+}
