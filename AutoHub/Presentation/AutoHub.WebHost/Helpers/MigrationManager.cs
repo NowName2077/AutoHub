@@ -11,7 +11,8 @@ public static class MigrationManager
     {
         using var scope = app.Services.CreateScope();
         var services = scope.ServiceProvider;
-        var logger = services.GetRequiredService<ILogger<MigrationManager>>();
+        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+        var logger = loggerFactory.CreateLogger(typeof(MigrationManager).FullName ?? "MigrationManager");
         var db = services.GetRequiredService<T>();
 
         logger.LogInformation("Applying migrations for {DbContext}", typeof(T).FullName);

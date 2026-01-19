@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Application\AutoHub.Application.Services\AutoHub.Application.Services.csproj" />
       <ProjectReference Include="..\..\Infrastructure\AutoHub.Infrastructure.EntityFramework\AutoHub.Infrastructure.EntityFramework.csproj" />
     </ItemGroup>
 

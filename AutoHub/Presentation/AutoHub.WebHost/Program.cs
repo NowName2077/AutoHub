@@ -2,6 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using AutoHub.Infrastructure.EntityFramework;
 using AutoHub.WebHost.Helpers;
+using AutoHub.Application.Services.Mapping;
+using AutoHub.Application.Services;
+using AutoHub.Application.Services.Abstractions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +30,16 @@ builder.Services.AddSwaggerGen(c =>
         Description = "Microservice for car listings, sellers and buyers"
     });
 });
+
+
+builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationProfile).Assembly);
+
+builder.Services.AddScoped<ICustomersApplicationService, CustomersApplicationService>();
+builder.Services.AddScoped<ISellersApplicationService, SellersApplicationService>();
+builder.Services.AddScoped<IListingsApplicationService, ListingsApplicationService>();
+builder.Services.AddScoped<IFavoritesApplicationService, FavoritesApplicationService>();
+builder.Services.AddScoped<ITransactionsApplicationService, TransactionApplicationService>();
+
 
 var app = builder.Build();
 
