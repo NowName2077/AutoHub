@@ -17,7 +17,11 @@ public class TransactionConfiguration: IEntityTypeConfiguration<Transaction>
                 amount => amount!.Value, 
                 value => new Money(value));
         
-        builder.Property(t => t.Listing).IsRequired();
+        builder.HasOne(t => t.Listing)
+            .WithMany()
+            .HasForeignKey("ListingId")
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
         
         builder.Property(t => t.TransactionDate).IsRequired()
             .HasConversion(

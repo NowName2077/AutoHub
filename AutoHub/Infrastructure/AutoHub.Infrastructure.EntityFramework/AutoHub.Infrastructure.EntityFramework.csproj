@@ -15,4 +15,8 @@
       <ProjectReference Include="..\..\Domain\AutoHub.Domain\AutoHub.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+
 </Project>

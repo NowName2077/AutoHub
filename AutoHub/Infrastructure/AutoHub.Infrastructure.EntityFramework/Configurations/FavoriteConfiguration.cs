@@ -11,6 +11,10 @@ public class FavoriteConfiguration: IEntityTypeConfiguration<Favorite>
         builder.HasKey(f => f.Id);
         builder.Property(f => f.Id).IsRequired();
 
-        builder.Property(f => f.Listing).IsRequired();
+        builder.HasOne(f => f.Listing)
+            .WithMany()
+            .HasForeignKey("ListingId")
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
