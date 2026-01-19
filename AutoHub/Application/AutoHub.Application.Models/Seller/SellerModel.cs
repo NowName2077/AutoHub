@@ -5,5 +5,5 @@ namespace AutoHub.Application.Models.Seller;
 
 public record class SellerModel(Guid Id, string Username) : UserModel(Id, Username) 
 {
-    public IEnumerable<ListingModel> ActiveListings { get; init; }
+    public IEnumerable<ListingModel> ActiveListings{ get; init; }
 }

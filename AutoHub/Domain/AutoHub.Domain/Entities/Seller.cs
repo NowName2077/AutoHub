@@ -11,6 +11,9 @@ public class Seller(Guid id, Username username) : Entity<Guid>(id)
     
     public Username Username { get; private set; } = username ?? throw new ArgumentNullValueException(nameof(username));
     
+    public IReadOnlyCollection<Listing> ActiveListings => 
+        _listings.Where(l => l.IsActive).ToList().AsReadOnly();
+    
     internal bool ChangeUsername(Username newUsername) 
     {
         if (Username == newUsername) return false;
