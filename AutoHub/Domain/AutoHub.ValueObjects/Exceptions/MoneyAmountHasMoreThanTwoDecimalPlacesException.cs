@@ -1,6 +1,12 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class MoneyAmountHasMoreThanTwoDecimalPlacesException(string message, string paramName, decimal value) : ArgumentException(message, paramName)
+public class MoneyAmountHasMoreThanTwoDecimalPlacesException: ArgumentException
 {
-    public decimal Value => value;
+    public MoneyAmountHasMoreThanTwoDecimalPlacesException(string message, string paramName, decimal value)
+        : base(message, paramName)
+    {
+        Value = value;
+    }
+
+    public decimal Value { get; }
 }

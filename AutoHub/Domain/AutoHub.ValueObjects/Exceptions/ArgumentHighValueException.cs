@@ -1,8 +1,14 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class ArgumentHighValueException (string value, int maxValue)
-        : FormatException($"{value} is greater than the allowed value {maxValue}")
+public class ArgumentHighValueException : FormatException
 { 
-        public string Value => value;
-        public int MaxLength => maxValue;
+    public ArgumentHighValueException(string value, int maxValue)
+        : base($"{value} is greater than the allowed value {maxValue}")
+    {
+        Value = value;
+        MaxValue = maxValue;
+    }
+
+    public string Value { get; }
+    public int MaxValue { get; }
 }

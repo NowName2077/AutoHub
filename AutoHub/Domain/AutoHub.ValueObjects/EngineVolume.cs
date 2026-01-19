@@ -3,4 +3,7 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class EngineVolume(decimal liters) : ValueObject<decimal>(new EngineVolumeValidator(), liters);
+public class EngineVolume: ValueObject<decimal>
+{
+    public EngineVolume(decimal liters) : base(new EngineVolumeValidator(), liters) { }
+}

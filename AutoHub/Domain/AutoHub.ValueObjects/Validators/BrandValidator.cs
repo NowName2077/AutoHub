@@ -11,11 +11,11 @@ public class BrandValidator : IValidator<string>
     public void Validate(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentNullOrWhiteSpaceException(ExceptionMessages.TITEL_NOT_NULL_OR_WRITE_SPACES,
+            throw new ArgumentNullOrWhiteSpaceException(ExceptionMessages.TITLE_NOT_NULL_OR_WRITE_SPACES,
                 nameof(value));
         if (value.Length > MaxLength)
-            throw new ArgumentLongValueException(nameof(value), MaxLength);
+            throw new ArgumentLongValueException(value, MaxLength);
         if (value.Length < MinLength)
-            throw new ArgumentShortValueException(nameof(value), MinLength);
+            throw new ArgumentShortValueException(value, MinLength);
     }
 }

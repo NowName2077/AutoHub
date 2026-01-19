@@ -3,4 +3,7 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class Brand(string titel) : ValueObject<string>(new BrandValidator(), titel);
+public class Brand : ValueObject<string>
+{
+    public Brand (string titel) : base (new BrandValidator(), titel){ }
+}

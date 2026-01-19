@@ -3,4 +3,7 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class  Color(string color) : ValueObject<string>(new ColorValidator(), color);
+public class  Color: ValueObject<string>
+{
+    public Color(string color) : base(new ColorValidator(), color) { }
+}

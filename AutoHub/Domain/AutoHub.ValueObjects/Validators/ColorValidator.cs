@@ -13,8 +13,8 @@ public class ColorValidator : IValidator<string>
         if (string.IsNullOrWhiteSpace(value))
             throw new ArgumentNullOrWhiteSpaceException(ExceptionMessages.COLOR_NOT_NULL_OR_WRITE_SPACES, nameof(value));
         if (value.Length > MaxLength)
-            throw new ArgumentLongValueException(nameof(value), MaxLength);
+            throw new ArgumentLongValueException(value, MaxLength);
         if (value.Length < MinLength)
-            throw new ArgumentShortValueException(nameof(value), MinLength);
+            throw new ArgumentShortValueException(value, MinLength);
     }
 }

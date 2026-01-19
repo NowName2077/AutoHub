@@ -3,4 +3,7 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class Horsepower(int value) : ValueObject<int>(new HorsepowerValidator(), value);
+public class Horsepower : ValueObject<int>
+{
+    public Horsepower(int value) : base(new HorsepowerValidator(), value) { }
+}

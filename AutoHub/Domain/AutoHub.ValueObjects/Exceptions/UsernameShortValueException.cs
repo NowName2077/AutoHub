@@ -1,8 +1,14 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class UsernameShortValueException(string name,  int minLength)
-    : FormatException($"Name length {name} greater than minimum allowed length {minLength}")
+public class UsernameShortValueException: FormatException
 {
-    public string Name => name;
-    public int MinLength => minLength;
+    public UsernameShortValueException(string name, int minLength)
+        : base($"Name length '{name}' is less than minimum allowed length {minLength}")
+    {
+        Name = name;
+        MinLength = minLength;
+    }
+
+    public string Name { get; }
+    public int MinLength { get; }
 }

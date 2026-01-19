@@ -1,8 +1,14 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class ArgumentLowValueException(string value, int minValue)
-    : FormatException($"Title length {value} is less than the allowed value {minValue}")
+public class ArgumentLowValueException: FormatException
 {
-    public string Value => value;
-    public int MinValue => minValue;
+    public ArgumentLowValueException(string value, int minValue)
+        : base($"Value '{value}' is less than the allowed value {minValue}")
+    {
+        Value = value;
+        MinValue = minValue;
+    }
+
+    public string Value { get; }
+    public int MinValue { get; }
 }

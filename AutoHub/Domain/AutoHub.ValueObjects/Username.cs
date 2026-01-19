@@ -3,4 +3,7 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class Username(string name) : ValueObject<string>(new UsernameValidator(), name);
+public class Username : ValueObject<string>
+{
+    public Username(string name) : base(new UsernameValidator(), name) { }
+}

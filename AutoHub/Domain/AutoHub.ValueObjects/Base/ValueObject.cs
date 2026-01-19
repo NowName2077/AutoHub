@@ -2,7 +2,7 @@
 
 namespace AutoHub.ValueObjects.Base;
 
-public class ValueObject<T> : IEquatable<ValueObject<T>>
+public abstract class ValueObject<T> : IEquatable<ValueObject<T>>
 {
     public T Value { get; }
 

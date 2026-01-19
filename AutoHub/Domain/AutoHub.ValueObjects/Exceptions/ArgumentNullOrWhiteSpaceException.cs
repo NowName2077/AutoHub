@@ -1,4 +1,7 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class ArgumentNullOrWhiteSpaceException(string paramName, string message)
-        : ArgumentNullException(paramName, message);
+public class ArgumentNullOrWhiteSpaceException: ArgumentNullException
+{
+    public ArgumentNullOrWhiteSpaceException(string paramName, string message)
+        : base(paramName, message) { }
+}

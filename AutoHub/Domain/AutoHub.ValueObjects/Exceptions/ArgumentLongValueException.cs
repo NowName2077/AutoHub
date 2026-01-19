@@ -1,8 +1,14 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class ArgumentLongValueException(string value, int maxLength)
-    : FormatException($"Title length {value} shorter than minimum allowed length {maxLength}")
+public class ArgumentLongValueException: FormatException
 {
-    public string Value => value;
-    public int MaxLength => maxLength;
+    public ArgumentLongValueException(string value, int maxLength)
+        : base($"Value '{value}' length is greater than maximum allowed length {maxLength}")
+    {
+        Value = value;
+        MaxLength = maxLength;
+    }
+
+    public string Value { get; }
+    public int MaxLength { get; }
 }

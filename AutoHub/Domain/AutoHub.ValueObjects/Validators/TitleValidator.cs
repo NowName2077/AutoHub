@@ -10,7 +10,7 @@ public class TitleValidator: IValidator<string>
     public void Validate(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentNullOrWhiteSpaceException(ExceptionMessages.TITEL_NOT_NULL_OR_WRITE_SPACES, nameof(value));
+            throw new ArgumentNullOrWhiteSpaceException(ExceptionMessages.TITLE_NOT_NULL_OR_WRITE_SPACES, nameof(value));
         if (value.Length > MaxLength)
             throw new ArgumentLongValueException(nameof(value), MaxLength);
         if (value.Length < MinLength)

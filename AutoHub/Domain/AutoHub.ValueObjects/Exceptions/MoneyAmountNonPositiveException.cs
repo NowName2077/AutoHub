@@ -1,6 +1,12 @@
 ﻿namespace AutoHub.ValueObjects.Exceptions;
 
-public class MoneyAmountNonPositiveException(string message, string paramName, decimal value) : ArgumentException(message, paramName)
+public class MoneyAmountNonPositiveException: ArgumentException
 {
-    public decimal Value => value;
+    public MoneyAmountNonPositiveException(string message, string paramName, decimal value)
+        : base(message, paramName)
+    {
+        Value = value;
+    }
+
+    public decimal Value { get; }
 }

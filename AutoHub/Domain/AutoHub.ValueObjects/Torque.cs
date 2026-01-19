@@ -3,4 +3,7 @@ using AutoHub.ValueObjects.Validators;
 
 namespace AutoHub.ValueObjects;
 
-public class Torque(int value) : ValueObject<int>(new TorqueValidator(), value);
+public class Torque : ValueObject<int>
+{
+    public Torque(int value) : base(new TorqueValidator(), value) { }
+}
