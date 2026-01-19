@@ -18,3 +18,4 @@ public class FavoriteConfiguration: IEntityTypeConfiguration<Favorite>
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
+//AutoSpot.WebHost

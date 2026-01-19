@@ -1,0 +1,9 @@
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.csproj.AssemblyReference.cache
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.AssemblyInfoInputs.cache
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.AssemblyInfo.cs
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.csproj.CoreCompileInputs.cache
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.MvcApplicationPartsAssemblyInfo.cs
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.MvcApplicationPartsAssemblyInfo.cache
+D:\C#\AutoHub\AutoHub\Presentation\AutoHub.WebHost\obj\Debug\net8.0\AutoHub.WebHost.sourcelink.json

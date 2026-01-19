@@ -1,0 +1,7 @@
+﻿services:
+  autospot.webhost:
+    image: autospot.webhost
+    build:
+      context: .
+      dockerfile: Presentation/AutoSpot.WebHost/Dockerfile
+
