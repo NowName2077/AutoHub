@@ -16,3 +16,5 @@ D:\C#\AutoHub\AutoHub\Application\AutoHub.Application.Models\obj\Debug\net8.0\Au
 D:\C#\AutoHub\AutoHub\Application\AutoHub.Application.Models\obj\Debug\net8.0\refint\AutoHub.Application.Models.dll
 D:\C#\AutoHub\AutoHub\Application\AutoHub.Application.Models\obj\Debug\net8.0\AutoHub.Application.Models.pdb
 D:\C#\AutoHub\AutoHub\Application\AutoHub.Application.Models\obj\Debug\net8.0\ref\AutoHub.Application.Models.dll
+D:\C#\AutoHub\AutoHub\Application\AutoHub.Application.Models\bin\Debug\net8.0\AutoHub.Application.Models.runtimeconfig.json
+D:\C#\AutoHub\AutoHub\Application\AutoHub.Application.Models\obj\Debug\net8.0\AutoHub.Application.Models.genruntimeconfig.cache

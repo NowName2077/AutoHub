@@ -11,3 +11,5 @@ D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\refint\AutoHu
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.pdb
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\ref\AutoHub.ValueObjects.dll
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.csproj.AssemblyReference.cache
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\bin\Debug\net8.0\AutoHub.ValueObjects.runtimeconfig.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.ValueObjects\obj\Debug\net8.0\AutoHub.ValueObjects.genruntimeconfig.cache

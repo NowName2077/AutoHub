@@ -16,3 +16,5 @@ D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain.Repositories.Abstractions\obj\Debug\
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain.Repositories.Abstractions\obj\Debug\net8.0\refint\AutoHub.Domain.Repositories.Abstractions.dll
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain.Repositories.Abstractions\obj\Debug\net8.0\AutoHub.Domain.Repositories.Abstractions.pdb
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain.Repositories.Abstractions\obj\Debug\net8.0\ref\AutoHub.Domain.Repositories.Abstractions.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain.Repositories.Abstractions\bin\Debug\net8.0\AutoHub.Domain.Repositories.Abstractions.runtimeconfig.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain.Repositories.Abstractions\obj\Debug\net8.0\AutoHub.Domain.Repositories.Abstractions.genruntimeconfig.cache

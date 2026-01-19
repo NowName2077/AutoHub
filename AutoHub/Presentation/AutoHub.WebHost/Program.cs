@@ -5,6 +5,8 @@ using AutoHub.WebHost.Helpers;
 using AutoHub.Application.Services.Mapping;
 using AutoHub.Application.Services;
 using AutoHub.Application.Services.Abstractions;
+using AutoHub.Domain.Repositories.Abstractions;
+using AutoHub.Infrastructure.EntityFramework.RepositoriesEF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,11 +36,10 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationProfile).Assembly);
 
-builder.Services.AddScoped<ICustomersApplicationService, CustomersApplicationService>();
-builder.Services.AddScoped<ISellersApplicationService, SellersApplicationService>();
-builder.Services.AddScoped<IListingsApplicationService, ListingsApplicationService>();
-builder.Services.AddScoped<IFavoritesApplicationService, FavoritesApplicationService>();
-builder.Services.AddScoped<ITransactionsApplicationService, TransactionApplicationService>();
+builder.Services.AddScoped<ICustomersRepository, CustomerRepository>();
+builder.Services.AddScoped<ISellersRepository, SellerRepository>();
+builder.Services.AddScoped<IListingsRepository, ListingsRepository>();
+builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
 
 
 var app = builder.Build();

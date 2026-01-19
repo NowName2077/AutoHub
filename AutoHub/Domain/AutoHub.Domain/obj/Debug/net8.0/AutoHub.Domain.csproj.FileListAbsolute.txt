@@ -14,3 +14,5 @@ D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.dll
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\refint\AutoHub.Domain.dll
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.pdb
 D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\ref\AutoHub.Domain.dll
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\bin\Debug\net8.0\AutoHub.Domain.runtimeconfig.json
+D:\C#\AutoHub\AutoHub\Domain\AutoHub.Domain\obj\Debug\net8.0\AutoHub.Domain.genruntimeconfig.cache

@@ -16,3 +16,7 @@ D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\obj\
 D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\obj\Debug\net8.0\refint\AutoHub.Infrastructure.EntityFramework.dll
 D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\obj\Debug\net8.0\AutoHub.Infrastructure.EntityFramework.pdb
 D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\obj\Debug\net8.0\ref\AutoHub.Infrastructure.EntityFramework.dll
+D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\bin\Debug\net8.0\AutoHub.Infrastructure.EntityFramework.runtimeconfig.json
+D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\obj\Debug\net8.0\AutoHub.Infrastructure.EntityFramework.genruntimeconfig.cache
+D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\bin\Debug\net8.0\AutoHub.Domain.Repositories.Abstractions.dll
+D:\C#\AutoHub\AutoHub\Infrastructure\AutoHub.Infrastructure.EntityFramework\bin\Debug\net8.0\AutoHub.Domain.Repositories.Abstractions.pdb
