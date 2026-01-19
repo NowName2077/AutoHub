@@ -52,6 +52,14 @@
               "target": "Package",
               "version": "[16.0.0, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.23, )"
@@ -153,6 +161,14 @@
               "target": "Package",
               "version": "[16.0.0, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.23, )"
@@ -249,6 +265,14 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[16.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
