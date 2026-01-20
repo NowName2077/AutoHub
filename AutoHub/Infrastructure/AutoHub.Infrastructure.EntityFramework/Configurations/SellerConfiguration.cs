@@ -22,5 +22,6 @@ public class SellerConfiguration : IEntityTypeConfiguration<Seller>
             .WithOne(l => l.Seller)
             .HasForeignKey("SellerId")
             .HasPrincipalKey(u => u.Id);
+        
     }
 }

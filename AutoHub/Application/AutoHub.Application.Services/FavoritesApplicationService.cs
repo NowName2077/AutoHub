@@ -29,14 +29,9 @@ public class FavoritesApplicationService: IFavoritesApplicationService
 
     public async Task<bool> AddFavoriteAsync(Guid customerId, Guid listingId, CancellationToken cancellationToken = default)
     {
-        var customer = await _customersRepository.GetByIdAsync(customerId, cancellationToken);
-        if (customer is null) return false;
-
         var listing = await _listingsRepository.GetByIdAsync(listingId, cancellationToken);
         if (listing is null) return false;
-
-        customer.AddFavorite(listing);
-        return await _customersRepository.UpdateAsync(customer, cancellationToken);
+        return await _customersRepository.AddFavoriteAsync(customerId, listing, cancellationToken);
     }
 
     public async Task<bool> RemoveFavoriteAsync(Guid customerId, Guid listingId, CancellationToken cancellationToken = default)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoHub.WebHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c6754a84d652578dbb12eb555c1f8f3b35098d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+665f702199b4a1e348745265da0a2d5f660ccf74")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoHub.WebHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoHub.WebHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

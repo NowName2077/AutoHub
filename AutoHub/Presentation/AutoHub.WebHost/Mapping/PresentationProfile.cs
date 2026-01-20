@@ -21,22 +21,27 @@ public class PresentationProfile : Profile
 {
     public PresentationProfile()
     {
-        CreateMap<CreateSellerRequest, CreateSellerModel>();
-        CreateMap<CreateCustomerRequest, CreateCustomerModel>();
-        CreateMap<CreateListingRequest, CreateListingModel>();
-        CreateMap<CreateTransactionRequest, CreateTransactionModel>();
-        CreateMap<CreateFavoriteRequest, CreateFavoriteModel>();
-        
         CreateMap<SellerModel, SellerShortResponse>();
         CreateMap<SellerModel, SellerDetailedResponse>();
-
+        CreateMap<CreateSellerRequest, CreateSellerModel>();
+        CreateMap<CreateSellerModel, SellerShortResponse>();
+        
         CreateMap<CustomerModel, CustomerShortResponse>();
         CreateMap<CustomerModel, CustomerDetailedResponse>();
-
+        CreateMap<CreateCustomerRequest, CreateCustomerModel>();
+        CreateMap<CreateCustomerModel, CustomerShortResponse>();
+        
         CreateMap<ListingModel, ListingShortResponse>();
         CreateMap<ListingModel, ListingDetailedResponse>();
+        CreateMap<CreateListingRequest, CreateListingModel>();
+        CreateMap<CreateListingModel, ListingShortResponse>();
         
         CreateMap<TransactionModel, TransactionResponse>();
+        CreateMap<CreateTransactionRequest, CreateTransactionModel>();
+        CreateMap<CreateTransactionModel, TransactionResponse>();
+        
         CreateMap<FavoriteModel, FavoriteResponse>();
+        CreateMap<CreateFavoriteRequest, CreateFavoriteModel>();
+        CreateMap<CreateFavoriteModel, FavoriteResponse>();
     }
 }

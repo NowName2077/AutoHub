@@ -21,18 +21,44 @@ public class CustomersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll(CancellationToken ct)
+    public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
     {
-        var customers = await _service.GetCustomersAsync(ct);
+        var customers = await _service.GetCustomersAsync(cancellationToken);
         return Ok(_mapper.Map<IEnumerable<CustomerShortResponse>>(customers));
     }
-
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateCustomerRequest request, CancellationToken ct)
+    
+    [HttpGet("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CustomerDetailedResponse))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
+    public async Task<IActionResult> GetCustomerById(Guid id, CancellationToken cancellationToken)
     {
-        var model = _mapper.Map<CreateCustomerModel>(request);
-        var created = await _service.CreateCustomerAsync(model, ct);
-        if (created is null) return BadRequest();
-        return CreatedAtAction(nameof(GetAll), null, _mapper.Map<CustomerShortResponse>(created));
+        var customer = await _service.GetCustomerByIdAsync(id, cancellationToken);
+        if (customer is null)
+            return NotFound($"Customer with id:{id} not found");
+        return Ok(_mapper.Map<CustomerDetailedResponse>(customer));
+    }
+    
+    [HttpGet("{username}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CustomerDetailedResponse))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
+    public async Task<IActionResult> GetCustomerByUsernameId(string username, CancellationToken cancellationToken)
+    {
+        var customer = await _service.GetCustomerByUsernameAsync(username, cancellationToken);
+        if (customer is null)
+            return NotFound($"Customer with username:{username} not found");
+        return Ok(_mapper.Map<CustomerDetailedResponse>(customer));
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Create( CreateCustomerRequest request, CancellationToken cancellationToken)
+    {
+        var customer = _mapper.Map<CreateCustomerModel>(request);
+        var createdCustomer = await _service.CreateCustomerAsync(customer, cancellationToken);
+        if (createdCustomer is null) return BadRequest("Customer can not be created");
+        
+        var customerResponse = _mapper.Map<CustomerShortResponse>(createdCustomer);
+        return CreatedAtAction(nameof(GetCustomerById), new { customerResponse.Id }, customerResponse);
     }
 }

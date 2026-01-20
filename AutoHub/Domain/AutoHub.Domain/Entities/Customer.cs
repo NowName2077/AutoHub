@@ -11,11 +11,11 @@ public class Customer: Entity<Guid>
     private readonly ICollection<Listing> _observedListings = new List<Listing>();
     
     public Username Username { get; private set; }
-    
-    public IReadOnlyCollection<Listing> ActiveObservedListings =>
-        _observedListings.Where(lot => lot.IsActive).ToList().AsReadOnly();
-    
-    public IReadOnlyCollection<Favorite> Favorites => _favorites.ToList().AsReadOnly();
+
+    public IReadOnlyCollection<Listing> ActiveObservedListings => (IReadOnlyCollection<Listing>)_observedListings;
+
+
+    public IReadOnlyCollection<Favorite> Favorites => _favorites.ToList();
     
     protected Customer() { }
     

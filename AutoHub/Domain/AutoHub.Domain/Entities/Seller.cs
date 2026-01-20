@@ -9,10 +9,9 @@ public class Seller: Entity<Guid>
 {
     private readonly ICollection<Listing> _listings = new List<Listing>();
     
-    public Username Username { get; private set; } 
-    
-    public IReadOnlyCollection<Listing> ActiveListings => 
-        _listings.Where(l => l.IsActive).ToList().AsReadOnly();
+    public Username Username { get; private set; }
+
+    public IReadOnlyCollection<Listing> ActiveListings => (IReadOnlyCollection<Listing>)_listings;
     
     protected Seller() { }
     

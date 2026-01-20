@@ -19,4 +19,17 @@ public class CustomerRepository(ApplicationDbContext context)
         => _customers.Include(c => c.Favorites)
             .ThenInclude(f => f.Listing).Include(c => c.ActiveObservedListings)
             .FirstOrDefaultAsync(c => c.Username.Value == username, cancellationToken);
+    
+    public async Task<bool> AddFavoriteAsync(Guid customerId, Listing listing, CancellationToken cancellationToken)
+    {
+        var customer = await _customers.FirstOrDefaultAsync(c => c.Id == customerId, cancellationToken);
+        if (customer is null) return false;
+        
+        var favorite = new Favorite(listing);
+        await context.Set<Favorite>().AddAsync(favorite, cancellationToken);
+        
+        context.Entry(favorite).Property("CustomerId").CurrentValue = customerId;
+
+        return await context.SaveChangesAsync(cancellationToken) > 0;
+    }
 }

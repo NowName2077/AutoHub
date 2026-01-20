@@ -6,4 +6,5 @@ namespace AutoHub.Domain.Repositories.Abstractions;
 public interface ICustomersRepository : IRepository<Customer, Guid>
 {
     Task<Customer?> GetCustomerByUsernameAsync(string username, CancellationToken cancellationToken);
+    Task<bool> AddFavoriteAsync(Guid customerId, Listing listing, CancellationToken cancellationToken);
 }

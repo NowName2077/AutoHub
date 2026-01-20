@@ -52,7 +52,8 @@ public class Listing: Entity<Guid>
     
     protected  Listing() { }
 
-    protected Listing(Guid id,
+    protected Listing(
+        Guid id,
         Title title, 
         Brand brand,
         EngineVolume engineVolume,

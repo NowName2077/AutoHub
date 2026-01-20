@@ -13,6 +13,7 @@ public class ListingsApplicationService: IListingsApplicationService
     private readonly IListingsRepository _listingsRepository;
     private readonly ISellersRepository _sellersRepository;
     private readonly IMapper _mapper;
+    
 
     public ListingsApplicationService(IListingsRepository listingsRepository, ISellersRepository sellersRepository, IMapper mapper)
     {

@@ -1,6 +1,7 @@
 ﻿namespace AutoHub.WebHost.Requests.Listing;
 
 public record class CreateListingRequest(
+    Guid Id,
     string Title,
     string Brand,
     decimal EngineVolume,

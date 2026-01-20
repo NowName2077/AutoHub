@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AutoHub.Infrastructure.EntityFramework.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260119205842_Initial")]
+    [Migration("20260119235920_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

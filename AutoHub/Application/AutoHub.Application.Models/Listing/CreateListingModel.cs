@@ -5,6 +5,7 @@ using AutoHub.ValueObjects;
 namespace AutoHub.Application.Models.Listing;
 
 public record class CreateListingModel(
+    Guid Id,
     string Title,
     string Brand,
     decimal EngineVolume,

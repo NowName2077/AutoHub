@@ -1,4 +1,4 @@
-@AutoHub.WebHost_HostAddress = http://localhost:5107
+@AutoHub.WebHost_HostAddress = http://localhost:5182
 
 GET {{AutoHub.WebHost_HostAddress}}/weatherforecast/
 Accept: application/json

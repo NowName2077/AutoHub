@@ -11,65 +11,74 @@ using AutoHub.Infrastructure.EntityFramework.RepositoriesEF;
 using AutoHub.WebHost.Mapping;
 using FluentValidation.AspNetCore;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace AutoHub.WebHost;
 
-// Configuration / DbContext
-var connectionString = builder.Configuration.GetConnectionString(nameof(ApplicationDbContext));
-if (string.IsNullOrWhiteSpace(connectionString))
-    throw new InvalidOperationException("Connection string for ApplicationDbContext is not configured.");
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString, npgsql =>
-        npgsql.MigrationsAssembly("AutoHub.Infrastructure.EntityFramework")));
-
-builder.Services.AddSwaggerGen(c =>
+public class Program
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoHub API", Version = "v1" });
-});
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader());
-});
+        var connectionString = builder.Configuration.GetConnectionString(nameof(ApplicationDbContext));
+        if (string.IsNullOrWhiteSpace(connectionString))
+            throw new InvalidOperationException("Connection string for ApplicationDbContext is not configured.");
+        
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseNpgsql(connectionString, npgsql =>
+                npgsql.MigrationsAssembly("AutoHub.Infrastructure.EntityFramework")));
+
+        builder.Services.AddSwaggerGen(c =>
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoHub API", Version = "v1" });
+        });
+        
+        
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+                policy.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+        });
+        
+        builder.Services.AddAuthorization();
+
+        builder.Services.AddControllers();
+
+        builder.Services.AddEndpointsApiExplorer();
+
+        builder.Services.AddSwaggerGen();
+
+        builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationProfile).Assembly, typeof(PresentationProfile).Assembly);
+
+        builder.Services.AddScoped<ICustomersRepository, CustomerRepository>();
+        builder.Services.AddScoped<ISellersRepository, SellerRepository>();
+        builder.Services.AddScoped<IListingsRepository, ListingsRepository>();
+        builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
+
+        builder.Services.AddScoped<ICustomersApplicationService, CustomersApplicationService>();
+        builder.Services.AddScoped<ISellersApplicationService, SellersApplicationService>();
+        builder.Services.AddScoped<IListingsApplicationService, ListingsApplicationService>();
+        builder.Services.AddScoped<IFavoritesApplicationService, FavoritesApplicationService>();
+        builder.Services.AddScoped<ITransactionsApplicationService, TransactionApplicationService>();
+
+        var app = builder.Build();
+
+        app.MigrateDatabase<ApplicationDbContext>();
+
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseAuthorization();
 
 
-builder.Services.AddControllers();
+        app.MapControllers();
 
-builder.Services.AddEndpointsApiExplorer();
+        app.MigrateDatabase<ApplicationDbContext>();
 
-builder.Services.AddSwaggerGen();
-// AutoMapper
-builder.Services.AddAutoMapper(cfg => { }, typeof(ApplicationProfile).Assembly);
-
-builder.Services.AddScoped<ICustomersRepository, CustomerRepository>();
-builder.Services.AddScoped<ISellersRepository, SellerRepository>();
-builder.Services.AddScoped<IListingsRepository, ListingsRepository>();
-builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
-
-builder.Services.AddScoped<ICustomersApplicationService, CustomersApplicationService>();
-builder.Services.AddScoped<ISellersApplicationService, SellersApplicationService>();
-builder.Services.AddScoped<IListingsApplicationService, ListingsApplicationService>();
-builder.Services.AddScoped<IFavoritesApplicationService, FavoritesApplicationService>();
-builder.Services.AddScoped<ITransactionsApplicationService, TransactionApplicationService>();
-
-var app = builder.Build();
-
-app.MigrateDatabase<ApplicationDbContext>();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+        app.Run();
+    }
 }
-
-app.UseAuthorization();
-
-
-app.MapControllers();
-
-app.MigrateDatabase<ApplicationDbContext>();
-
-app.Run();
